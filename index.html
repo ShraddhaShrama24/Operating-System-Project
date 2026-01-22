@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Page Cache Dashboard</title>
+
+    <!-- ✅ Professional Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ✅ Global Styles */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            padding: 20px; 
+            background: #f4f6fa; 
+            color: #333;
+        }
+
+        h1 {
+            font-weight: 600;
+            color: #4A6CF7;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ✅ Algorithm result card */
+        .algo-box {
+            padding: 20px;
+            margin: 18px 0;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .algo-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        /* ✅ Algorithm titles */
+        .tag {
+            font-size: 22px;
+            font-weight: 600;
+            color: #4A6CF7;
+            margin-bottom: 12px;
+        }
+
+        /* ✅ Frame badge styles */
+        .frames {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .path {
+            background: #e8edff;
+            color: #3b4cca;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 320px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* ✅ Smooth fade-in animation */
+        .algo-box, .path {
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Mini Page Cache - Real Time Dashboard</h1>
+
+    <h3>Current Page Access: 
+        <span id="currentPage" style="color:#4A6CF7; font-weight:600;"></span>
+    </h3>
+
+    <div id="algos"></div>
+    <div style="margin-top: 40px;">
+    <h2 style="text-align:center; color:#4A6CF7;">Real-Time Algorithm Comparison</h2>
+    <canvas id="algoChart" height="120"></canvas>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
